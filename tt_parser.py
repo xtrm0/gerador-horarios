@@ -62,7 +62,7 @@ def extract_category(course_name, shift_name):
     if (ret in ['PB']):
         return ret
     ret = shift_name[-3:-2]
-    if (ret in ['L','T','P']):
+    if (ret in ['L','T','P','S']):
         return ret
 
 def extract_name_from_url(url):
