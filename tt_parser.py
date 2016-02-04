@@ -29,8 +29,9 @@ class HTMLCourseParser:
             day        = parse_day(shift_time[0:3])
             start      = parse_time(shift_time[5:10])
             end        = parse_time(shift_time[13:18])
-            room       = str(tds[3].a.contents[0].encode("cp1252").strip()) \
-                           if tds[3].find_all('a') else ""
+            room       = ""
+            if (tds[3].find_all('a') and tds[3].a.contents):
+                room = str(tds[3].a.contents[0].encode("cp1252").strip())
 
             
             if shift_name != current_shift.name:   # new shift
